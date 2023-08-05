@@ -4,7 +4,7 @@ import { ShopModel, type IShopData } from '$lib/database';
 
 export const load = (async () => {
 	await connect(
-		'mongodb+srv://admin:xZznAB65eCngdGpi@cluster0.m1xypq1.mongodb.net/?retryWrites=true&w=majority'
+		'mongodb+srv://joshedwards20003:iVYnC4k00ECWexfI@cluster0.lzs0uhw.mongodb.net/?retryWrites=true&w=majority'
 	);
 	const allShopEntries = (await ShopModel.find({}))
 		.map((shop) => {
