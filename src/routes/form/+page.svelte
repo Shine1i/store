@@ -2,7 +2,7 @@
 	import Card from '$lib/Card.svelte';
 	import type { IShopData } from '$lib/database';
 	import { toastStore, type ToastSettings } from '@skeletonlabs/skeleton';
-	import {goto} from "$app/navigation";
+	import { goto } from '$app/navigation';
 	let cardData: Partial<IShopData> = {
 		banner: '',
 		shopName: '',
@@ -14,17 +14,12 @@
 		message: 'Successfully added your store to Heavens Marketplace.',
 		background: 'variant-filled-error',
 		timeout: 10000
-
 	};
-	//      https://i.imgur.com/kf1HT9i.jpg
 </script>
 
 <main class="flex w-full pt-32 justify-center items-center flex-col lg:flex-row">
 	<section>
-		<form
-
-			class="p-5 md:p-10 space-y-6 w-[550px] px-20 pt-20 lg:px-0 lg:pt-16 rounded-lg"
-		>
+		<form class="p-5 md:p-10 space-y-6 w-[550px] px-20 pt-20 lg:px-0 lg:pt-16 rounded-lg">
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 				<div class="space-y-1">
 					<label for="password" class="font-medium">Order id</label>
@@ -110,37 +105,34 @@
 				/>
 			</div>
 			<button
-
-					on:click={() => {
-				try {
-				 fetch('api/order', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify(cardData)
-				})
-					.then((res) => res.json())
-					.then((data) => {
-						if (data.success){
-
-							t.message = "Successfully added your store to Heavens Marketplace."
-							t.background = "variant-filled-success"
-							t.timeout= 5000
-								toastStore.trigger(t);
-							goto("/")
-						}else{
-								t.message = "Something went wrong please try again"
-							t.background = "variant-filled-error"
-							t.timeout= 5000
-							toastStore.trigger(t);
-						}
-					});
-				}catch {
-				console.log('err')
-				}
-
-			}}
+				on:click={() => {
+					try {
+						fetch('api/order', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							body: JSON.stringify(cardData)
+						})
+							.then((res) => res.json())
+							.then((data) => {
+								if (data.success) {
+									t.message = 'Successfully added your store to Heavens Marketplace.';
+									t.background = 'variant-filled-success';
+									t.timeout = 5000;
+									toastStore.trigger(t);
+									goto('/');
+								} else {
+									t.message = 'Something went wrong please try again';
+									t.background = 'variant-filled-error';
+									t.timeout = 5000;
+									toastStore.trigger(t);
+								}
+							});
+					} catch {
+						console.log('err');
+					}
+				}}
 				type="submit"
 				class="w-full inline-flex justify-center items-center space-x-2 font-semibold rounded-lg px-8 py-4 leading-6 variant-filled-primary btn"
 			>
