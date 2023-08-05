@@ -6,9 +6,10 @@
     // Most of your app wide CSS should be put in this file
     import '../app.postcss';
     import {AppShell} from '@skeletonlabs/skeleton';
+    import { Toast } from '@skeletonlabs/skeleton';
 </script>
 
-
+<Toast />
 <AppShell slotPageHeader="fixed variant-glass top-0 z-50 w-full">
     <svelte:fragment slot="pageHeader">
         <header id="page-header" class="relative flex flex-none items-center py-8">
@@ -71,18 +72,15 @@
 
                 </nav>
                 <nav  class="lg:w-1/3  lg:text-center space-x-2 sm:space-x-4">
-                    <a href="javascript:void(0)"
+                    <a href="https://t.me/gotzgfx"
                        class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
                         Telegram
                     </a>
-                    <a href="javascript:void(0)"
+                    <a href="https://t.me/gotzgfx"
                        class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
                         Want website?
                     </a>
-                    <a href="javascript:void(0)"
-                       class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
-                        Privacy Policy
-                    </a>
+
                 </nav>
                 <div class="lg:w-1/3 lg:text-left text-gray-500 dark:text-gray-400/80">
                     <span class="font-medium">Heavens Marketplace</span> ©

@@ -5,16 +5,16 @@
 </script>
 
 <!--h-[530px]-->
-<div class="card glass relative w-96 card-hover rounded-lg">
+<div class="card glass relative min-h-[535px] max-h-[535px] w-96 card-hover overflow-hidden rounded-lg">
 	<header>
 		<img src={cardData.banner} class="bg-black/50 w-full aspect-[21/9] rounded-t-lg" alt="Post" />
 	</header>
 	<div class="p-4 space-y-4">
-		<h3 class="h3 flex gap-2 items-center" data-toc-ignore>
-			<Avatar src={cardData.shopImage} width="w-11" /><slot name="title">{cardData.shopName}</slot>
+		<h3 class="h3 flex gap-2 items-center w-[336px] line-clamp-1" data-toc-ignore>
+			<Avatar src={cardData.shopImage} width="w-11" /><slot name="title" class="line-clamp-1">{cardData.shopName}</slot>
 		</h3>
-		<article class=" pr-20">
-			<p>{cardData.shopDescription}</p>
+		<article class=" w-[330px]">
+		{cardData.shopDescription}
 		</article>
 	</div>
 	<hr class="opacity-50" />
