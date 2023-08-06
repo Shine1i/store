@@ -1,17 +1,9 @@
 import { connect } from 'mongoose';
 import type { PageServerLoad } from './$types';
 import { ShopModel, type IShopData } from '$lib/database';
-import statistics from "$lib/statistics";
+import statistics from '$lib/statistics';
 
 export const load = (async () => {
-
-
-	
-
-
-
-
-
 	await connect(
 		'mongodb+srv://joshedwards20003:iVYnC4k00ECWexfI@cluster0.lzs0uhw.mongodb.net/?retryWrites=true&w=majority'
 	);
@@ -23,10 +15,11 @@ export const load = (async () => {
 				shopName: shop.shopName,
 				shopImage: shop.shopImage,
 				shopDescription: shop.shopDescription,
-				expireDate: shop.expireDate
+				expireDate: shop.expireDate,
+				color: shop.color
 			} as IShopData;
 		})
 		.filter((shop) => shop.expireDate > new Date());
 	const stats = await statistics();
-	return { allShopEntries,stats};
+	return { allShopEntries, stats };
 }) satisfies PageServerLoad;
