@@ -6,7 +6,8 @@ export async function POST({ request }) {
 	await connect(
 		'mongodb+srv://joshedwards20003:iVYnC4k00ECWexfI@cluster0.lzs0uhw.mongodb.net/?retryWrites=true&w=majority'
 	);
-	const { key, banner, websiteUrl, shopName, shopImage, shopDescription } = await request.json();
+	const { key, banner, websiteUrl, shopName, shopImage, shopDescription, color } =
+		await request.json();
 
 	// Check if the purchase key has already been redeemed
 	const existingRedeemedKey = await RedeemedKeyModel.findOne({ key: key });
@@ -48,7 +49,8 @@ export async function POST({ request }) {
 				shopDescription: shopDescription,
 				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 				expireDate: getDateBasedOnTime(timeToExpire)!,
-				key: key
+				key: key,
+				color: color
 			} satisfies IShopData;
 			const newShop = new ShopModel(shopData);
 			const newKey = new RedeemedKeyModel({ key: key });

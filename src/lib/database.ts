@@ -1,4 +1,4 @@
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 const shopSchema = new Schema<IShopData>({
 	banner: { type: String, required: true },
 	websiteUrl: { type: String, required: true },
@@ -6,7 +6,8 @@ const shopSchema = new Schema<IShopData>({
 	shopImage: { type: String, required: true },
 	shopDescription: { type: String, required: true },
 	expireDate: { type: Date, required: true },
-	key: { type: String, required: true }
+	key: { type: String, required: true },
+	color: { type: String, required: true }
 });
 export const ShopModel = model<IShopData>('Shop', shopSchema);
 
@@ -27,7 +28,7 @@ export interface IShopData {
 	shopDescription: string;
 	expireDate: Date;
 	key: string;
-	color:string;
+	color: string;
 }
 export enum Time {
 	None,
