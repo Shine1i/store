@@ -3,18 +3,22 @@
 	import type { IShopData } from '$lib/database';
 	import { toastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
+	import ColorPicker from "svelte-awesome-color-picker";
 	let cardData: Partial<IShopData> = {
 		banner: '',
 		shopName: '',
 		shopDescription: '',
 		websiteUrl: '',
-		shopImage: ''
+		shopImage: '',
+		color:'#191e1f'
 	};
 	const t: ToastSettings = {
 		message: 'Successfully added your store to Heavens Marketplace.',
 		background: 'variant-filled-error',
 		timeout: 10000
 	};
+	let hex = '#191e1f';
+	$:cardData.color = hex
 </script>
 
 <main class="flex w-full pt-32 justify-center items-center flex-col lg:flex-row">
@@ -151,8 +155,10 @@
 		</form>
 	</section>
 
-	<div class="p-6">
-		<h2 class="h3">Card Preview</h2>
+	<div class="p-6 ">
+		<div class="flex w-full items-center">
+		<h2 class="h3 ">Card Preview</h2>
+		<ColorPicker bind:hex isDark={true} /></div>
 		<Card {cardData} />
 	</div>
 </main>

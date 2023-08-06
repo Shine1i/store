@@ -3,6 +3,7 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import Card from '$lib/Card.svelte';
 	export let data;
+	console.log(data)
 </script>
 
 <!-- Hero Section: Image Cover with Header Actions Dark -->

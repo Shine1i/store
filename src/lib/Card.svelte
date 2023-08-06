@@ -2,14 +2,20 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import type { IShopData } from './database';
 	export let cardData: Partial<IShopData>;
+	// or hsv or hex
+
+
 </script>
+
 
 <!--h-[530px]-->
 <div
-	class="card glass relative min-h-[535px] max-h-[535px] w-96 card-hover overflow-hidden rounded-lg"
+		id="card"
+		style="background-color: {cardData.color};"
+	class="card  relative min-h-[535px] max-h-[535px] w-96 card-hover overflow-hidden rounded-lg"
 >
 	<header>
-		<img src={cardData.banner} class="bg-black/50 w-full aspect-[21/9] rounded-t-lg" alt="Post" />
+		<img src={cardData.banner} class="bg-black/50 p-1 w-full aspect-[21/9] rounded-t-lg" alt="Post" />
 	</header>
 	<div class="p-4 space-y-4">
 		<h3 class="h3 flex gap-2 items-center w-[336px] line-clamp-1" data-toc-ignore>
@@ -31,24 +37,4 @@
 	</footer>
 </div>
 
-<style>
-	.glass {
-		border: none;
-		-webkit-backdrop-filter: blur(var(--glass-blur, 40px));
-		backdrop-filter: blur(var(--glass-blur, 40px));
-		background-color: transparent;
-		background-image: linear-gradient(
-				135deg,
-				rgb(255 255 255 / var(--glass-opacity, 15%)) 0,
-				transparent 100%
-			),
-			linear-gradient(
-				var(--glass-reflex-degree, 100deg),
-				rgb(255 255 255 / var(--glass-reflex-opacity, 10%)) 25%,
-				transparent 25%
-			);
-		box-shadow: 0 0 0 1px rgb(255 255 255 / var(--glass-border-opacity, 10%)) inset,
-			0 0 0 2px rgb(0 0 0/5%);
-		text-shadow: 0 1px rgb(0 0 0 / var(--glass-text-shadow-opacity, 5%));
-	}
-</style>
+

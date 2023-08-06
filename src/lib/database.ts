@@ -27,6 +27,7 @@ export interface IShopData {
 	shopDescription: string;
 	expireDate: Date;
 	key: string;
+	color:string;
 }
 export enum Time {
 	None,

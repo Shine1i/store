@@ -1,6 +1,7 @@
 import { connect } from 'mongoose';
 import type { PageServerLoad } from './$types';
 import { ShopModel, type IShopData } from '$lib/database';
+import statistics from "$lib/statistics";
 
 export const load = (async () => {
 
@@ -26,5 +27,6 @@ export const load = (async () => {
 			} as IShopData;
 		})
 		.filter((shop) => shop.expireDate > new Date());
-	return { allShopEntries };
+	const stats = await statistics();
+	return { allShopEntries,stats};
 }) satisfies PageServerLoad;
