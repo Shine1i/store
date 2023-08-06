@@ -12,7 +12,7 @@
 <div
 		id="card"
 		style="background-color: {cardData.color};"
-	class="card  relative min-h-[535px] max-h-[535px] w-96 card-hover overflow-hidden rounded-lg"
+	class="card  relative min-h-[535px] p-1 max-h-[535px] w-96 card-hover overflow-hidden rounded-lg"
 >
 	<header>
 		<img src={cardData.banner} class="bg-black/50 p-1 w-full aspect-[21/9] rounded-t-lg" alt="Post" />
