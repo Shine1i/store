@@ -1,5 +1,4 @@
-
-import {CLOUDFLARE_API_KEY, CLOUDFLARE_ZONE_ID} from "$env/static/private"
+import { CLOUDFLARE_API_KEY, CLOUDFLARE_ZONE_ID } from '$env/static/private';
 export default async function statistics() {
 	const dates = generateDates();
 	const sevenData = makeRequest(dates.sevenDaysAgo);
@@ -15,7 +14,7 @@ async function makeRequest(then: string) {
 	try {
 		const data = await fetch('https://api.cloudflare.com/client/v4/graphql', {
 			method: 'POST',
-				body: "{"+query(then)+"}",
+			body: JSON.stringify({ query: query(then) }),
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: 'Bearer ' + CLOUDFLARE_API_KEY
@@ -23,8 +22,8 @@ async function makeRequest(then: string) {
 		});
 		if (data.ok) {
 			const json = await data.json();
-			const uniques = json.data.viewer.zones[0].httpRequests1dGroups.uniq.uniques;
-			return uniques as number;
+			const uniques = json.data.viewer.zones[0].httpRequests1dGroups[0].uniq.uniques as number;
+			return uniques;
 		}
 	} catch (err) {
 		console.log(err);
