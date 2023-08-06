@@ -12,7 +12,7 @@
 <div
 		id="card"
 		style="background-color: {cardData.color};"
-	class="card  relative min-h-[535px] p-1 max-h-[535px] w-96 card-hover overflow-hidden rounded-lg"
+	class="card  relative min-h-[535px] p-1 max-h-[545px] w-96 card-hover overflow-hidden rounded-lg"
 >
 	<header>
 		<img src={cardData.banner} class="bg-black/50 p-1 w-full aspect-[21/9] rounded-t-lg" alt="Post" />
@@ -23,13 +23,13 @@
 				>{cardData.shopName}</slot
 			>
 		</h3>
-		<article class="whitespace-pre-wrap w-[330px]">
+		<article class="whitespace-pre-wrap w-[330px] line-clamp-[9]">
 			{cardData.shopDescription}
 		</article>
 	</div>
 	<hr class="opacity-50" />
 	<footer class="p-4 flex justify-start items-center space-x-4">
-		<div class="flex-auto flex justify-between items-center">
+		<div class="flex-auto absolute bottom-2 right-3 flex justify-between items-center">
 			<a href={'https://' + cardData.websiteUrl} class="btn variant-filled-primary"
 				><slot name="button">Visit Now</slot></a
 			>

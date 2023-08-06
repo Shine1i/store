@@ -99,7 +99,6 @@
 					bind:value={cardData.shopDescription}
 					class="textarea placeholder:opacity-40 rounded-md"
 					rows="5"
-					minlength="80"
 					maxlength="255"
 					placeholder="⏰ Our Service Range ⏰
 🇨🇭 Encrypted VPS/ Windows RDP
