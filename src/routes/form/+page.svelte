@@ -107,7 +107,8 @@
 🇨🇭 Dedicated Web Hosting"
 				/>
 			</div>
-			<button
+			<a
+					href="/"
 				on:click={() => {
 					try {
 						fetch('api/order', {
@@ -124,7 +125,7 @@
 									t.background = 'variant-filled-success';
 									t.timeout = 5000;
 									toastStore.trigger(t);
-									goto('/');
+
 								} else {
 									t.message = 'Something went wrong please try again';
 									t.background = 'variant-filled-error';
@@ -150,7 +151,7 @@
 					/></svg
 				>
 				<span>Submit Store</span>
-			</button>
+			</a>
 		</form>
 	</section>
 
