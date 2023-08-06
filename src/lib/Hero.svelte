@@ -7,7 +7,8 @@
             element.scrollIntoView({behavior: "smooth"});
         }
     };
-
+export let stats;
+     console.log(stats)
 </script>
 <div class="relative  lg:bg-white/90 lg:bg-gradient-to-r from-transparent via-white to-transparent backdrop-blur-sm dark:bg-surface-900 dark:bg-opacity-95 dark:lg:bg-opacity-90 dark:from-transparent dark:via-surface-900 dark:to-transparent">
     <div class="relative text-center container pt-52 lg:pt-40 xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 ">
@@ -32,7 +33,10 @@
         <section>
 
         </section>
+        <div class="flex flex-col gap-3 items-center">
+        <span class="font-semibold text-lg"><span class="text-primary-500">{stats.one}</span> visitors for the past 24 hours | <span class="text-primary-500">{stats.seven}</span> for the last 7 Days</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-down mx-auto animate-bounce stroke-primary-500"><path d="m7 6 5 5 5-5"/><path d="m7 13 5 5 5-5"/></svg>
-    </div>
+        </div>
+        </div>
     <!-- END Hero Content -->
 </div>

@@ -10,7 +10,7 @@
 	class="dark bg-cover bg-bottom"
 	style="background-image: url('https://cdn.tailkit.com/media/placeholders/photo-Nyvq2juw4_o-1280x400.jpg');"
 >
-	<Hero />
+	<Hero stats={data.stats} />
 </div>
 <div
 	id="myElement"
