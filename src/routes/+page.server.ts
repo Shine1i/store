@@ -3,6 +3,14 @@ import type { PageServerLoad } from './$types';
 import { ShopModel, type IShopData } from '$lib/database';
 
 export const load = (async () => {
+
+
+	
+
+
+
+
+
 	await connect(
 		'mongodb+srv://joshedwards20003:iVYnC4k00ECWexfI@cluster0.lzs0uhw.mongodb.net/?retryWrites=true&w=majority'
 	);
