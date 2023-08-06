@@ -21,9 +21,9 @@
 	$:cardData.color = hex
 </script>
 
-<main class="flex w-full pt-32 justify-center items-center flex-col lg:flex-row">
+<main class="flex w-full  pt-32 justify-center items-center flex-col lg:flex-row">
 	<section>
-		<form class="p-5 md:p-10 space-y-6 w-[550px] px-20 pt-20 lg:px-0 lg:pt-16 rounded-lg">
+		<form class="p-5 md:p-10 space-y-6 w-[550px] px-28  pt-20 lg:px-0 lg:pt-16 rounded-lg">
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 				<div class="space-y-1">
 					<label for="password" class="font-medium">Order id</label>
@@ -154,9 +154,9 @@
 		</form>
 	</section>
 
-	<div class="p-6 ">
-		<div class="flex w-full items-center">
-		<h2 class="h3 ">Card Preview</h2>
+	<div class="p-6  pl-5  ">
+		<div class="flex pl-5  items-center">
+		<h2 class="h3 pl-5 ">Card Preview</h2>
 		<ColorPicker bind:hex isDark={true} /></div>
 		<Card {cardData} />
 	</div>
