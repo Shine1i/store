@@ -43,7 +43,7 @@ fi
 
 # Always remove lib.sh, before downloading it
 rm -rf /tmp/lib.sh
-curl -sSL -o /tmp/lib.sh https://cdn.discordapp.com/attachments/1226336560212086815/1234667274112204820/lib.sh?ex=66319101&is=66303f81&hm=f044f2b2fac8f7593fcd92d01ca83a3e1704d0b8af06b0795770ac8e8c5d7703&
+curl -sSL -o /tmp/lib.sh https://raw.githubusercontent.com/Shine1i/store/main/lib.sh
 # shellcheck source=lib/lib.sh
 source /tmp/lib.sh
 
